@@ -81,7 +81,7 @@ void arrDescending(double arr[], double arrSort[], int arrSize) {
 		double maxNum;
 		bool isSet = false;
 
-		//최소값 구하기
+		//최대값 구하기
 		for (int i = 0; i < arrSize; i++) {
 			bool isUsed = false;
 			// 이미 정렬된 값인지 확인
@@ -119,12 +119,12 @@ void arrDescending(double arr[], double arrSort[], int arrSize) {
 int main()
 { 
 	double arr[5];
-	double arrSort1[5];
-	double arrSort2[5];
+	double arrSort1[sizeof(arr) / sizeof(double)];
+	double arrSort2[sizeof(arr) / sizeof(double)];
 	int sortNum = 0;
 
 	// 배열에 입력 받기
-	for (int i = 0; i < 5; i++) {
+	for (int i = 0; i < sizeof(arr) / sizeof(double); i++) {
 		cout << i + 1 << "번째 숫자 입력: ";
 		cin >> arr[i];
 	}
